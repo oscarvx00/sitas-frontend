@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+    width: 100%; 
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body { 
+    margin: 0; 
+    //font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    //background-color: $color-background-general
+ }
