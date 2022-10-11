@@ -1,4 +1,7 @@
+@import '~@angular/material/theming';
 @import 'src/custom-theme.scss';
+
+
 
 .app-container{
     display: flex;
@@ -7,26 +10,6 @@
     width: 100vw;
 }
 
-.navbar-spacer{
-    flex: 1 1 auto;
-}
-
-.navbar-button{
-    margin-left: 15px;
-    margin-right: 15px;
-    font-size: 16px !important;
-}
-
 .router-container{
     flex: 1 1 auto;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px 2%;
-    background-color: $color-background;
-    color: $color-foreground;
-    font-size: 14px;
 }

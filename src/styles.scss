@@ -1,13 +1,30 @@
+@import '~@angular/material/theming';
+@import 'src/custom-theme.scss';
 
-html, body { 
+html { 
     height: 100%; 
     width: 100%; 
     max-width: 100%;
-    overflow-x: hidden;
+    
 }
 body { 
+    height: 100%; 
+    overflow: hidden;
     margin: 0; 
     //font-family: Roboto, "Helvetica Neue", sans-serif;
     font-family: 'Montserrat', sans-serif;
     //background-color: $color-background-general
- }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Signika+Negative:wght@500;600;700&display=swap');
+
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F00;
+    padding-bottom: 50px;
+}
+
