@@ -10,5 +10,5 @@ RUN npm run build --prod
 ### STAGE 2:RUN ###
 FROM nginx:latest AS ngi
 COPY nginx.conf  /etc/nginx/nginx.conf
-COPY --from=build /dist/src/app/dist/sitas-frontend /usr/share/nginx/html
+COPY --from=build /dist/src/app/dist/sitas /usr/share/nginx/html
 EXPOSE 80
