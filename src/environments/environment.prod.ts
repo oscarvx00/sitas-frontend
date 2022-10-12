@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendEndpoint: 'http://localhost:8080'
+  backendEndpoint: 'http://oscarvx00.ddns.net:31001'
 };
