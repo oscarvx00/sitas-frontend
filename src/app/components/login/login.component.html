@@ -2,17 +2,17 @@
     <div class="login-container">
         <h1>Sitas</h1>
         <div class="login-container-buttons">
-            <div class="login-button google">
+            <div class="login-button google" (click)="loginWithProvider('google')">
                 <img src="/assets/imgs/logoGoogle.png"/>
                 <span>Login with Google</span>
                 <div></div>
             </div>
-            <div class="login-button github">
+            <div class="login-button github" (click)="loginWithProvider('github')">
                 <img src="/assets/imgs/logoGithub.png"/>
                 <span>Login with Github</span>
                 <div></div>
             </div>
-            <div class="login-button discord">
+            <div class="login-button discord" (click)="loginWithProvider('discord')">
                 <img src="/assets/imgs/logoDiscord.png"/>
                 <span>Login with Discord</span>
                 <div></div>
