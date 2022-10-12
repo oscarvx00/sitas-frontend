@@ -15,6 +15,7 @@ spec:
       containers:
         - name: sitas-frontend
           image: oscarvicente/sitas-frontend
+          imagePullPolicy: Always
           resources:
             limits:
               memory: 500Mi
