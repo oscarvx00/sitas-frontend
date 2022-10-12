@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sitas-frontend
-          image: oscarvicente/sitas-frontend
+          image: oscarvicente/sitas-frontend-prod
           imagePullPolicy: Always
           resources:
             limits:
