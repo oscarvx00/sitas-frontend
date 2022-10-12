@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sitas-frontend
+  namespace: sitas
+spec:
+  selector:
+    matchLabels:
+      app: sitas-frontend
+  template:
+    metadata:
+      labels:
+        app: sitas-frontend
+    spec:
+      containers:
+        - name: sitas-frontend
+          image: oscarvicente/sitas-frontend
+          resources:
+            limits:
+              memory: 1Gi
+              cpu: "2"
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 80
