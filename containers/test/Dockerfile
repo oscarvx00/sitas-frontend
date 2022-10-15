@@ -2,6 +2,9 @@
 FROM node:14
 WORKDIR /sitas-frontend-test
 
+#Deny Google asking for data share
+ENV NG_CLI_ANALYTICS=ci
+
 #apt update
 RUN apt update
 
@@ -10,12 +13,12 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add
 RUN echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
 RUN apt-get update && apt-get install --no-install-recommends -y google-chrome-stable
 
-#Instal npm packages
-RUN npm install
 #Install angular cli
-RUN npm install -g @angular/cli
-
+RUN npm install -g @angular/cli@12.2.18
 
 COPY ./ ./
+
+#Instal npm packages
+RUN npm install
 
 ENTRYPOINT ["ng", "test", "--code-coverage", "--watch=false"]
