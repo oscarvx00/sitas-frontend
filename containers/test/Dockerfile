@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y google-chrome-s
 
 #Install angular cli
 RUN npm install -g @angular/cli
+#Instal npm packages
+RUN npm i
 
 COPY ./ ./
 
