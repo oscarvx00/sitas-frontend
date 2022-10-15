@@ -10,7 +10,9 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-jasmine-diff-reporter'),
+      require('karma-structured-json-reporter')
     ],
     client: {
       jasmine: {
@@ -28,8 +30,7 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/sitas'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
+        { type: 'lcov' },
       ]
     },
     reporters: ['progress', 'kjhtml'],
@@ -37,7 +38,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome_without_sandbox'],
+    customLaunchers : {
+      Chrome_without_sandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
