@@ -34,7 +34,7 @@ pipeline {
                     script {
                         def qualitygate = waitForQualityGate()
                         if(qualitygate.status != 'OK'){
-                            // "Pipeline aborted due to quality gate coverage failure."
+                            error "Pipeline aborted due to quality gate coverage failure."
                         }
                     }
                 }
