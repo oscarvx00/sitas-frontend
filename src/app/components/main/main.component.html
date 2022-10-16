@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="nav">
+        <div class="empty-div"></div>
+        <h1>Sitas</h1>
+        <div class="nav-button" (click)="loginClicked()" *ngIf="!checkUserLogged()">
+            <p>Login</p>
+        </div>
+        <div class="nav-button" (click)="profileClicked()" *ngIf="checkUserLogged()">
+            <p>Me</p>
+        </div>
+    </div>
+    <div class="container-content">
+        <div class="modules-container">
+            <div class="downloader-module module-songname" (click)="moduleClicked('searchName')">
+                <h1>Search name</h1>
+            </div>
+            <div class="downloader-module module-youtube" (click)="moduleClicked('youtube')">
+                <h1>Youtube</h1>
+            </div>
+            <div class="downloader-module module-soundcloud" (click)="moduleClicked('soundcloud')">
+                <h1>Soundcloud</h1>
+            </div>
+            <div class="downloader-module module-spotify" (click)="moduleClicked('spotify')">
+                <h1>Spotify</h1>
+            </div>
+        </div>
+    </div>
+</div>

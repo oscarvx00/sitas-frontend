@@ -2,9 +2,27 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+export const environment : any = {
   production: false,
-  backendEndpoint: 'http://localhost:8080'
+  backendEndpoint: 'http://localhost:8080',
+  modules : {
+    searchName : {
+      enabled: false,
+      path: 'search'
+    },
+    youtube: {
+      enabled : false,
+      path: 'youtube'
+    },
+    soundcloud: {
+      enabled : true,
+      path: 'soundcloud'
+    },
+    spotify : {
+      enabled: false,
+      path: 'spotify'
+    }
+  }
 };
 
 /*

@@ -1,0 +1,93 @@
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav .empty-div{
+    margin-left: 2%;
+    width: 180px;
+}
+
+.nav h1{
+    color: #E9FD01;
+    font-family: 'Signika Negative';
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.nav-button {
+    border: solid 1px #E9FD01;
+    width: 180px;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.nav-button p{
+    color: #E9FD01;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.container-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.modules-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.downloader-module{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vw;
+    background-color: #E9FD01;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.downloader-module h1{
+    color: white;
+}
+
+.module-songname{
+    background: linear-gradient(90deg, #1DB954, #7000FF );
+}
+
+.module-youtube{
+    background: linear-gradient(90deg, #7000FF, #FF0000 );
+}
+
+.module-soundcloud{
+    background: linear-gradient(90deg, #FF0000, #FF7700 );
+}
+
+.module-spotify{
+    background: linear-gradient(90deg, #FF7700, #1DB954 );
+}
+
