@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user/user.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,7 +11,8 @@ import { environment } from 'src/environments/environment';
 export class MainComponent implements OnInit {
 
   constructor(
-    private router : Router
+    private router : Router,
+    private userService : UserService
   ) { }
 
   ngOnInit(): void {
@@ -20,25 +22,28 @@ export class MainComponent implements OnInit {
     
     const selectedModule = environment.modules[moduleName]
 
-    console.log(selectedModule)
-
     if(selectedModule.enabled){
-      this.router.navigateByUrl(`/module/${selectedModule.path}`)
+      if(this.checkUserLogged()){
+        this.router.navigateByUrl(`/module/${selectedModule.path}`)
+      } else {
+        this.loginClicked()
+      }
     } else {
       this.router.navigateByUrl(`/notenabled`)
     }
   }
 
-  checkUserLogged() : boolean{
+  checkUserLogged() : boolean {
     return false
   }
 
   loginClicked(){
-    
+    this.router.navigateByUrl(`/login`)
+    //this.userService.check().subscribe(result => console.log(result))
   }
 
-  profileClicked() {
-    this.router.navigateByUrl(`/me`)
+  profileClicked(){
+    this.router.navigateByUrl(`/me`) 
   }
 
 }

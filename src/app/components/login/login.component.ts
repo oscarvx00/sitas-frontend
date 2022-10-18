@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
 
   loginWithProvider(providerName : string){
-    window.open(environment.backendEndpoint + `/oauth2/authorization/${providerName}`)
+    window.open(environment.backendEndpoint + `/oauth2/authorization/${providerName}`, "_self")
   }
 
 }
