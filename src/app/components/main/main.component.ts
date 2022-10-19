@@ -10,12 +10,15 @@ import { environment } from 'src/environments/environment';
 })
 export class MainComponent implements OnInit {
 
+  userLogged : boolean = false
+
   constructor(
     private router : Router,
     private userService : UserService
   ) { }
 
   ngOnInit(): void {
+    this.checkUserLogged()
   }
 
   moduleClicked(moduleName : string){
@@ -23,7 +26,7 @@ export class MainComponent implements OnInit {
     const selectedModule = environment.modules[moduleName]
 
     if(selectedModule.enabled){
-      if(this.checkUserLogged()){
+      if(this.userLogged){
         this.router.navigateByUrl(`/module/${selectedModule.path}`)
       } else {
         this.loginClicked()
@@ -33,17 +36,19 @@ export class MainComponent implements OnInit {
     }
   }
 
-  checkUserLogged() : boolean {
-    return false
+  async checkUserLogged(){
+    this.userService.isUserLoggedIn.subscribe(value => {
+      console.log(value)
+      this.userLogged = value
+    })
   }
 
   loginClicked(){
     this.router.navigateByUrl(`/login`)
-    //this.userService.check().subscribe(result => console.log(result))
+    
   }
 
   profileClicked(){
     this.router.navigateByUrl(`/me`) 
   }
-
 }

@@ -7,22 +7,27 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './components/main/main.component';
 import { ModuleNotEnabledComponent } from './components/utils/module-not-enabled/module-not-enabled.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    ModuleNotEnabledComponent
+    ModuleNotEnabledComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientTestingModule
   ],
-  providers: [],
+  providers : [
+    HttpClient,
+    HttpClientTestingModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
