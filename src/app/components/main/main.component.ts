@@ -38,7 +38,6 @@ export class MainComponent implements OnInit {
 
   async checkUserLogged(){
     this.userService.isUserLoggedIn.subscribe(value => {
-      console.log(value)
       this.userLogged = value
     })
   }
