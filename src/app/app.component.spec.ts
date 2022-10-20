@@ -1,9 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BehaviorSubject } from 'rxjs';
 import { AppComponent } from './app.component';
+import { UserService } from './services/user/user.service';
 
 describe('AppComponent', () => {
-  /*beforeEach(async () => {
+
+  let userServiceSpy = jasmine.createSpyObj('UserService', ['checkUserLogged'])
+
+  beforeEach(async () => {
+    userServiceSpy.isUserLoggedIn = new BehaviorSubject<boolean>(false)
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
@@ -11,6 +17,12 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers : [
+        {
+          provide: UserService, 
+          useValue: userServiceSpy
+        }
+      ]
     }).compileComponents();
   });
 
@@ -24,6 +36,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('sitas');
-  });*/
+  });
 
 });
