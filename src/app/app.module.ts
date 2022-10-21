@@ -22,10 +22,11 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientTestingModule
+    //HttpClientTestingModule
   ],
   providers : [
     HttpClient,
+    HttpClientModule,
     HttpClientTestingModule
   ],
   bootstrap: [AppComponent]
