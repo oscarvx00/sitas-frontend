@@ -17,10 +17,7 @@ export class RequestComponent implements OnInit {
 
   data : SongItem[] = [
     {
-      name : 'TEST1'
-    },
-    {
-      name : 'TEEEST'
+      name : ''
     }
   ]
 
@@ -66,8 +63,13 @@ export class RequestComponent implements OnInit {
   }
   
   downloadClicked(){
+    if(this.data.filter(it => it.name && it.name.trim()).length == 0){
+      alert("No data intoduced")
+      return
+    }
+
     this.requestService.sendRequest(
-      this.data.filter(it => it.name != '').map(it => it.name)
+      this.data.filter(it => it.name).map(it => it.name)
     ).subscribe(
       (res : any) => {
 
