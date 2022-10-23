@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="top-nav">
+        <p>GO TO MY DOWNLOADS</p>
+    </div>
+    <div class="modules-container">
+        <div class="module">
+            <p>YOUTUBE</p>
+        </div>
+        <div class="module">
+            <p>SPOTIFY</p>
+        </div>
+        <div class="module soundcloud">
+            <p>SOUNDCLOUD</p>
+        </div>
+    </div>
+    <div class="list-container">
+        <div *ngFor="let songItem of data; let i = index" class="song-list-item" #listItem>
+            <p contenteditable="true" (keydown.enter)="addRow($event, i)" (keyup.enter)="focusOnLast()" (focusout)="addRow($event,i)">{{songItem.name}}</p>
+            <div class="remove-row" (click)="remove(i)">X</div>
+        </div>
+    </div>
+    <div class="download-button" (click)="downloadClicked()">DOWNLOAD</div>
+</div>

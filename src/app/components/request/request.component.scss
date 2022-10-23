@@ -1,0 +1,120 @@
+
+.top-nav {
+    padding: 15px 70px;
+    border: 2px solid #E9FD01;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    cursor: pointer;
+}
+
+.top-nav:hover {
+    background-color: #ebff0f27;
+}
+
+.top-nav p{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.modules-container {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.module {
+    background-color: #3E3E3E;
+    border-radius: 10px;
+    width: 220px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.module p{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.soundcloud {
+    background-color: #FF7700;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.spotify {
+    background-color: #1DB954;
+}
+
+.list-container {
+    margin-top: 70px;
+    width: 70%;
+    max-height: 60vh;
+    overflow: auto;
+
+}
+
+.song-list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #7305FF;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+.song-list-item * {
+    margin: 0px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.song-list-item p {
+    flex: 1;
+    margin: 0px 10px;
+}   
+
+.remove-row{
+    height: 20px;
+    width: 20px;
+    border: 1px solid #7305FF;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+.download-button {
+    background-color: #7305FF;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 50px;
+    cursor: pointer;
+}

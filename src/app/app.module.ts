@@ -9,6 +9,7 @@ import { MainComponent } from './components/main/main.component';
 import { ModuleNotEnabledComponent } from './components/utils/module-not-enabled/module-not-enabled.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RequestComponent } from './components/request/request.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
     LoginComponent,
     MainComponent,
     ModuleNotEnabledComponent,
+    RequestComponent,
   ],
   imports: [
     BrowserModule,
