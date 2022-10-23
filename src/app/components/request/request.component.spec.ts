@@ -220,4 +220,12 @@ describe('RequestComponent', () => {
 
     expect(navArgs).toEqual('/login')
   })
+
+  it('focusOnLast', () => {
+    component.focusOnLastFlag = true
+    
+    component.focusOnLast()
+
+    expect(component.focusOnLastFlag).toBeFalse()
+  })
 });

@@ -15,7 +15,6 @@ export class RequestService {
 
 
   sendRequest(songNames : string[]) : Observable<any> {
-    console.log(songNames)
     return this.httpClient.post(environment.backendEndpoint + '/request',
     {
       songNames
