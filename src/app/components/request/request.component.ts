@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
 import { SongItem } from 'src/app/models/song-item.model';
+import { RequestService } from 'src/app/services/request/request.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-request',
@@ -21,13 +24,26 @@ export class RequestComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(
+    private requestService : RequestService,
+    private userService : UserService,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+    this.checkUserLogged()
   }
 
   remove(index : number){
     this.data.splice(index,1)
+  }
+
+  async checkUserLogged(){
+    this.userService.isUserLoggedIn.subscribe(value => {
+      if(!value){
+        this.router.navigateByUrl(`/login`)
+      }
+    })
   }
 
   addRow(event : any, index : number){
@@ -50,7 +66,16 @@ export class RequestComponent implements OnInit {
   }
   
   downloadClicked(){
-    
+    this.requestService.sendRequest(
+      this.data.filter(it => it.name != '').map(it => it.name)
+    ).subscribe(
+      (res : any) => {
+
+      },
+      (err : any) => {
+        console.error(err)
+      }
+    )
   }
 
 }
