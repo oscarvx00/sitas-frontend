@@ -16,9 +16,7 @@ export class RequestService {
 
   sendRequest(songNames : string[]) : Observable<any> {
     return this.httpClient.post(environment.backendEndpoint + '/request',
-    {
-      songNames
-    },
+    songNames,
     {
       withCredentials: true
     }

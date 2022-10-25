@@ -19,6 +19,8 @@ export class AppComponent {
 
   ngOnInit() {
     this.userService.checkUserLogged().subscribe(result => {
+
+      console.log('euth')
       this.userService.isUserLoggedIn.next(true)
     },
       (err : any) => {

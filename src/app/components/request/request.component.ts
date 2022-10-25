@@ -14,6 +14,7 @@ export class RequestComponent implements OnInit {
   @ViewChildren('listItem') listItems : QueryList<ElementRef>
 
   focusOnLastFlag = false
+  discardCheckUserLogged = true
 
   data : SongItem[] = [
     {
@@ -36,9 +37,16 @@ export class RequestComponent implements OnInit {
   }
 
   async checkUserLogged(){
+    console.log('cehck')
     this.userService.isUserLoggedIn.subscribe(value => {
-      if(!value){
-        this.router.navigateByUrl(`/login`)
+      console.log(value)
+      //The first time returns false, may be a bug
+      if(this.discardCheckUserLogged){
+        this.discardCheckUserLogged = false
+      } else {
+        if(!value){
+          this.router.navigateByUrl(`/login`)
+        }
       }
     })
   }
