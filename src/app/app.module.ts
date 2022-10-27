@@ -10,6 +10,7 @@ import { ModuleNotEnabledComponent } from './components/utils/module-not-enabled
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { RequestComponent } from './components/request/request.component';
+import { SongDownloadComponent } from './components/song-download/song-download.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { RequestComponent } from './components/request/request.component';
     MainComponent,
     ModuleNotEnabledComponent,
     RequestComponent,
+    SongDownloadComponent,
   ],
   imports: [
     BrowserModule,
