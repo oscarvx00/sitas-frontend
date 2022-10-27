@@ -1,1 +1,15 @@
-<p>song-download works!</p>
+<div class="container">
+    <div class="top-nav">
+        <p>GO TO SEARCH</p>
+    </div>
+    <div class="list-container">
+        <div *ngFor="let songDownload of data; let i = index"  class="song-list-item-container">
+            <div class="song-list-item" #listItem>
+                <p>{{songDownload.name}}</p>
+            </div>
+            <div class="song-list-item-download">
+                DOWNLOAD
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+
+.top-nav {
+    padding: 15px 70px;
+    border: 2px solid #E9FD01;
+    border-top: none;
+    border-radius: 0px 0px 20px 20px;
+    cursor: pointer;
+}
+
+.top-nav:hover {
+    background-color: #ebff0f27;
+}
+
+.top-nav p{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.list-container {
+    margin-top: 70px;
+    width: 70%;
+    max-height: 60vh;
+    overflow: auto;
+
+}
+
+.song-list-item-container div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #7305FF;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px;
+    color: white;
+    
+}
+
+.song-list-item {
+    flex: 1;
+}
+
+.song-list-item * {
+    margin: 0px;
+    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.song-list-item p {
+    flex: 1;
+    margin: 0px 10px;
+}
+
+.song-list-item-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.song-list-item-download {
+    cursor: pointer;
+}
+
+.song-list-item-download:hover {
+    background-color: #7105ff1c;
+}
