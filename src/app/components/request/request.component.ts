@@ -88,4 +88,8 @@ export class RequestComponent implements OnInit {
     )
   }
 
+  goToDownloadClicked(){
+    this.router.navigateByUrl('/download')
+  }
+
 }

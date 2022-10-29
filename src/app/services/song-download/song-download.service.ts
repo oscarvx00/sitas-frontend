@@ -14,7 +14,7 @@ export class SongDownloadService {
   ) { }
 
   getSongsDownloads() : Observable<SongDownloadItem[]> {
-    return this.httpClient.get<SongDownloadItem[]>(environment.backendEndpoint + '/songDownload', {
+    return this.httpClient.get<SongDownloadItem[]>(environment.backendEndpoint + '/download', {
       withCredentials: true
     })
   }

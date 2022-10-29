@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SongDownloadItem } from 'src/app/models/song-download-item.model';
 import { SongDownloadService } from 'src/app/services/song-download/song-download.service';
 
@@ -21,16 +22,22 @@ export class SongDownloadComponent implements OnInit {
   ]
 
   constructor(
-    private songDownloadService : SongDownloadService
+    private songDownloadService : SongDownloadService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
+    this.songDownloadService.getSongsDownloads().subscribe(data => this.data = data)
   }
 
   getSongDownloads() {
     this.songDownloadService.getSongsDownloads().subscribe(apiData => {
       this.data = apiData
     })
+  }
+
+  goToSearchClicked() {
+    this.router.navigateByUrl('/')
   }
 
 }
