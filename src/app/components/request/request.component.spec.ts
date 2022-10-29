@@ -228,4 +228,15 @@ describe('RequestComponent', () => {
 
     expect(component.focusOnLastFlag).toBeFalse()
   })
+
+
+  it('go to download clicked', () => {
+
+
+    component.goToDownloadClicked()
+
+    const navArgs = routerSpy.navigateByUrl.calls.first().args[0];
+
+    expect(navArgs).toEqual('/download')
+  })
 });

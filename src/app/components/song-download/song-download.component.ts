@@ -27,7 +27,7 @@ export class SongDownloadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.songDownloadService.getSongsDownloads().subscribe(data => this.data = data)
+    this.getSongDownloads()
   }
 
   getSongDownloads() {
