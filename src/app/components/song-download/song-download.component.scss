@@ -62,10 +62,14 @@
     justify-content: space-around;
 }
 
-.song-list-item-download {
+.song-list-item-download-ready {
     cursor: pointer;
 }
 
-.song-list-item-download:hover {
+.song-list-item-download-ready:hover {
     background-color: #7105ff1c;
+}
+
+.song-list-item-download-notready {
+    border-color: gray !important;
 }

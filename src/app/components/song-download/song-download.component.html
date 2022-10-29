@@ -7,7 +7,10 @@
             <div class="song-list-item" #listItem>
                 <p>{{songDownload.name}}</p>
             </div>
-            <div class="song-list-item-download">
+            <div *ngIf="songDownload.ready" class="song-list-item-download-ready">
+                DOWNLOAD
+            </div>
+            <div *ngIf="!songDownload.ready" class="song-list-item-download-notready">
                 DOWNLOAD
             </div>
         </div>

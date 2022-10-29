@@ -11,13 +11,15 @@ import { SongDownloadService } from 'src/app/services/song-download/song-downloa
 export class SongDownloadComponent implements OnInit {
 
   data : SongDownloadItem[] = [
-    /*{
+ /* {
       name: 'test1',
-      downloadId : 'id1'
+      downloadId : 'id1',
+      ready: true
     },
     {
       name: 'test2',
-      downloadId: 'id2'
+      downloadId: 'id2',
+      ready : false
     }*/
   ]
 

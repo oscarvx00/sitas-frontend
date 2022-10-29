@@ -80,7 +80,7 @@ export class RequestComponent implements OnInit {
       this.data.filter(it => it.name).map(it => it.name)
     ).subscribe(
       (res : any) => {
-
+        this.goToDownloadClicked()
       },
       (err : any) => {
         console.error(err)
