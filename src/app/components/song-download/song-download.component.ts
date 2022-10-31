@@ -34,12 +34,23 @@ export class SongDownloadComponent implements OnInit {
 
   getSongDownloads() {
     this.songDownloadService.getSongsDownloads().subscribe(apiData => {
+      console.log(apiData)
       this.data = apiData
     })
   }
 
   goToSearchClicked() {
     this.router.navigateByUrl('/')
+  }
+
+  downloadSongClicked(downloadId : string){
+    this.songDownloadService.downloadSong(downloadId).subscribe(stResponse => {
+      this.openDownloadLink(stResponse.val)
+    })
+  }
+
+  private openDownloadLink(url : string){
+    window.open(url, '_blank')
   }
 
 }

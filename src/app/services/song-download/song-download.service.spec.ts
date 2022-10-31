@@ -29,4 +29,13 @@ describe('SongDownloadService', () => {
 
     httpTestingController.verify()
   })
+
+  it('download song', () => {
+    service.downloadSong('testId').subscribe(res => {})
+
+    const req = httpTestingController.expectOne('http://localhost:8080/download/testId')
+    expect(req.request.method).toEqual('GET')
+
+    httpTestingController.verify()
+  })
 });

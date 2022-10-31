@@ -7,7 +7,7 @@
             <div class="song-list-item" #listItem>
                 <p>{{songDownload.name}}</p>
             </div>
-            <div *ngIf="songDownload.ready" class="song-list-item-download-ready">
+            <div *ngIf="songDownload.ready" class="song-list-item-download-ready" (click)="downloadSongClicked(songDownload.downloadId)">
                 DOWNLOAD
             </div>
             <div *ngIf="!songDownload.ready" class="song-list-item-download-notready">
