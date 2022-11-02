@@ -34,7 +34,6 @@ export class SongDownloadComponent implements OnInit {
 
   getSongDownloads() {
     this.songDownloadService.getSongsDownloads().subscribe(apiData => {
-      console.log(apiData)
       this.data = apiData
     })
   }

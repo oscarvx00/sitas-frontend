@@ -122,6 +122,22 @@ describe('RequestComponent', () => {
     ])
   })
 
+  it('remove, one row keep', () => {
+    component.data = [
+      {
+        name: 'test1'
+      }
+    ]
+
+    component.remove(0)
+
+    expect(component.data).toEqual([
+      {
+        name: 'test1'
+      }
+    ])
+  })
+
   it('add row ok', () => {
     const mockEvent = {
       preventDefault: () => { },
