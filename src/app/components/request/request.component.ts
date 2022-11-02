@@ -33,11 +33,12 @@ export class RequestComponent implements OnInit {
   }
 
   remove(index : number){
-    this.data.splice(index,1)
+    if(this.data.length > 1){
+      this.data.splice(index,1)
+    }
   }
 
   async checkUserLogged(){
-    console.log('cehck')
     this.userService.isUserLoggedIn.subscribe(value => {
       console.log(value)
       //The first time returns false, may be a bug
